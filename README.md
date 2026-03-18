@@ -40,3 +40,26 @@ A full-stack web application for managing social media marketing services using 
 ---
 
 ## 📁 Project Structure
+
+post-your-brand/
+│
+├── frontend/ # React UI
+├── backend/ # Django API
+
+
+---
+
+## 🚀 Setup Instructions
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+
+Backend
+cd backend
+venv\Scripts\activate
+python manage.py runserver
+
+
