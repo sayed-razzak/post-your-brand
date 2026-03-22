@@ -11,20 +11,20 @@ def contact_view(request):
     if serializer.is_valid():
         data = serializer.save()
 
-        # Send email notification
-        send_mail(
-            subject="New Client Inquiry 🚀",
-            message=f"""
-New message received:
+        try:
+            send_mail(
+                subject="New Client Inquiry",
+                message=f"Name: {data.name}\nEmail: {data.email}\nMessage: {data.message}",
+                from_email="postyourbrand2@gmail.com",
+                recipient_list=["postyourbrand2@gmail.com"],
+                fail_silently=False,
+            )
+        except Exception as e:
+            print("Email sending failed:", e)
 
-Name: {data.name}
-Email: {data.email}
-Message: {data.message}
-""",
-            from_email="postyourbrand2@gmail.com",
-            recipient_list=["postyourbrand2@gmail.com"],
+        return Response(
+            {"message": "Message received successfully"},
+            status=status.HTTP_201_CREATED
         )
-
-        return Response({"message": "Message sent successfully"}, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
