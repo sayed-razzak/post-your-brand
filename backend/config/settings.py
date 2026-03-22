@@ -130,12 +130,12 @@ EMAIL_HOST_PASSWORD = 'zlapeagrreshstsk'
 
 ALLOWED_HOSTS = ['*']
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://your-netlify-site.netlify.app",
+]
 
-CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = ['*']
