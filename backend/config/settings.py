@@ -85,7 +85,11 @@ STATIC_URL = "static/"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://postyourbrand.netlify.app",
+    "https://postyourbrandd.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = False
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://postyourbrandd.netlify.app",
+]
